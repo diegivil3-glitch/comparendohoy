@@ -1,0 +1,392 @@
+/* ComparendoHoy — boleta / papel de comparendo. Un acento ámbar-rojo. */
+:root {
+  --paper: #f2ead8;
+  --paper-2: #e7dcc3;
+  --ink: #1a1612;
+  --muted: #5a5348;
+  --rule: #cbb892;
+  --stamp: #b33a1a;
+  --stamp-soft: #f0d8cc;
+  --max: 40rem;
+  --tap: 3.35rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 112.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(120, 96, 56, 0.07) 28px
+    );
+  font-family: Georgia, "Palatino Linotype", Palatino, "Book Antiqua", "Times New Roman", serif;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--stamp);
+  text-underline-offset: 0.15em;
+}
+
+a:hover { text-decoration-thickness: 2px; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--stamp);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -4rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.85rem;
+  z-index: 20;
+}
+.skip:focus { top: 0.75rem; }
+
+.wrap {
+  width: min(100% - 1.6rem, var(--max));
+  margin-inline: auto;
+}
+
+.site-header {
+  border-bottom: 3px solid var(--ink);
+  padding: 1rem 0 0.85rem;
+  background: var(--paper);
+}
+
+.brand {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 3px solid var(--stamp);
+  line-height: 1.15;
+}
+
+.tag {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.55rem;
+  padding: 0.15rem 0 0.35rem;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.2rem 0.55rem;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.28);
+  font-size: 0.92rem;
+}
+
+.nav a[aria-current="page"] {
+  border-color: var(--stamp);
+  color: var(--stamp);
+  font-weight: 700;
+}
+
+.site-main {
+  padding: 1.35rem 0 2.5rem;
+}
+
+h1 {
+  font-size: 1.85rem;
+  line-height: 1.15;
+  margin: 0 0 0.85rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.28rem;
+  line-height: 1.2;
+  margin: 1.6rem 0 0.55rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--rule);
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.1rem 0 0.4rem;
+}
+
+p { margin: 0 0 0.85rem; }
+
+.lead {
+  font-size: 1.12rem;
+}
+
+.pregunta {
+  font-size: 1.55rem;
+  line-height: 1.18;
+  margin: 1.1rem 0 0.85rem;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.reloj-titulo {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.duro {
+  border: 3px solid var(--stamp);
+  background: var(--stamp-soft);
+  padding: 0.85rem 0.95rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.duro p { margin: 0; font-weight: 700; }
+
+.nota {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.ramas {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.rama-btn {
+  appearance: none;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--paper);
+  background: var(--ink);
+  border: 3px solid var(--ink);
+  cursor: pointer;
+}
+
+.rama-btn[aria-pressed="true"] {
+  background: var(--stamp);
+  border-color: var(--stamp);
+}
+
+.rama-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+.rama {
+  border: 2px dashed var(--ink);
+  padding: 0.95rem 0.9rem 1.05rem;
+  margin: 0 0 1.15rem;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.reloj-titulo {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tramos {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.7rem 0 0.85rem;
+}
+
+.tramo {
+  padding: 0.55rem 0.7rem;
+  border-left: 6px solid var(--stamp);
+  background: var(--stamp-soft);
+}
+
+.tramo.segundo {
+  border-left-color: var(--ink);
+  background: var(--paper-2);
+}
+
+.tramo.fuera {
+  border-left-color: var(--rule);
+  background: transparent;
+  color: var(--muted);
+}
+
+.tramo strong { display: block; }
+
+.pasos {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 1rem;
+  counter-reset: paso;
+}
+
+.pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding: 0.7rem 0.7rem 0.7rem 3.1rem;
+  margin: 0 0 0.5rem;
+  border: 1px solid var(--ink);
+  min-height: var(--tap);
+}
+
+.pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.btn-fila {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.85rem 0 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap);
+  padding: 0.7rem 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid var(--stamp);
+  background: var(--stamp);
+  color: #fff8f3;
+}
+
+.btn-sec {
+  background: transparent;
+  color: var(--stamp);
+}
+
+.lista {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+}
+
+.lista li { margin: 0 0 0.4rem; }
+
+.puntos {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.punto {
+  border: 1px solid var(--ink);
+  padding: 0.85rem 0.9rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.punto h3 { margin-top: 0; }
+
+.punto a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+}
+
+.bandas {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.banda {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.15rem 0.7rem;
+  border: 1px solid var(--rule);
+  padding: 0.65rem 0.75rem;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.banda .letra {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--stamp);
+}
+
+.nums {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Consolas, "Courier New", monospace;
+  font-size: 0.92rem;
+}
+
+.fuentes {
+  font-size: 0.92rem;
+}
+
+.fuentes li { margin-bottom: 0.45rem; }
+
+.aviso-ns {
+  border: 1px solid var(--ink);
+  padding: 0.7rem 0.8rem;
+  margin: 0 0 1rem;
+}
+
+.site-footer {
+  border-top: 3px solid var(--ink);
+  padding: 1.1rem 0 2rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.site-footer p { margin: 0 0 0.4rem; }
+
+.sello {
+  display: inline-block;
+  border: 3px solid var(--stamp);
+  color: var(--stamp);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  padding: 0.28rem 0.5rem;
+  transform: rotate(-2deg);
+  margin: 0 0 0.85rem;
+}
+
+hr.corte {
+  border: 0;
+  border-top: 1px dashed var(--ink);
+  margin: 1.4rem 0;
+}
+
+@media (min-width: 640px) {
+  h1 { font-size: 2.15rem; }
+  .pregunta { font-size: 1.75rem; }
+  .ramas { grid-template-columns: 1fr 1fr; }
+}

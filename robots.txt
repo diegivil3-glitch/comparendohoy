@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diegivil3-glitch.github.io/comparendohoy/sitemap.xml

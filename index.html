@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Si el comparendo fue hoy — ComparendoHoy</title>
+  <meta name="description" content="Qué hacer el mismo día de un comparendo en Bogotá: vía o fotomulta, curso SDM y pago con descuento.">
+  <link rel="stylesheet" href="css/sitio.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">ComparendoHoy</a>
+      <p class="tag">Guía de comparendos en Bogotá. Si te lo pusieron hoy: días, no semanas.</p>
+      <nav class="nav" aria-label="Secciones">
+      <a href="index.html" aria-current="page">Hoy</a>
+      <a href="descuento-50-25.html">50% y 25%</a>
+      <a href="curso-pedagogico-sdm.html">Curso SDM</a>
+      <a href="puntos-curso-sdm.html">Puntos</a>
+      <a href="curso-cia-cuando-si.html">Curso CIA</a>
+      <a href="fotomulta.html">Fotomulta</a>
+      <a href="acerca.html">Acerca</a>
+      <a href="aviso.html">Aviso</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido" class="site-main">
+    <div class="wrap">
+      <h1>Si el comparendo fue hoy</h1>
+      <p class="sello">Hoy corre el reloj</p>
+      <p class="lead">Te lo pusieron hoy. Tienes días hábiles, no semanas. Elige la rama y haz las tres cosas: agendar, curso, pago.</p>
+      <div class="duro">
+        <p>El descuento exige el curso pedagógico y el pago dentro de la ventana. Pagar sin el curso no da 50% ni 25%.</p>
+      </div>
+      <h2 class="pregunta">¿Te lo pusieron en vía o es fotomulta / electrónico?</h2>
+      <noscript>
+        <p class="aviso-ns">Sin JavaScript. Ve directo al <a href="#rama-via">reloj en vía</a> o al <a href="#rama-foto">reloj de fotomulta</a>.</p>
+      </noscript>
+      <div class="ramas">
+        <button type="button" class="rama-btn" id="btn-via" aria-pressed="false" aria-controls="rama-via">En vía — me lo entregó un agente</button>
+        <button type="button" class="rama-btn" id="btn-foto" aria-pressed="false" aria-controls="rama-foto">Fotomulta / electrónico</button>
+      </div>
+
+      <section class="rama" id="rama-via" aria-labelledby="tit-via">
+        <h2 class="reloj-titulo" id="tit-via">Reloj en vía</h2>
+        <p>Un agente te lo impuso. El reloj arranca el día de la imposición. Días hábiles. No cuentan sábados, domingos ni festivos. Ley 769 de 2002, art. 136.</p>
+        <div class="tramos">
+          <div class="tramo">
+            <strong>50%</strong>
+            Días hábiles 1 a 5: curso pedagógico y pago.
+          </div>
+          <div class="tramo segundo">
+            <strong>25%</strong>
+            Días hábiles 6 a 20: curso pedagógico y pago.
+          </div>
+          <div class="tramo fuera">
+            Después del día 20 hábil esa ventana de descuento se acabó.
+          </div>
+        </div>
+        <h3>Las tres acciones</h3>
+        <ol class="pasos">
+          <li><a href="curso-pedagogico-sdm.html">Agendar el curso SDM</a>. Es gratis. Sin intermediarios.</li>
+          <li><a href="puntos-curso-sdm.html">Hacer el curso</a>. Un curso por cada orden de comparendo. Documento original. RUNT inscrito.</li>
+          <li>Pagar. El volante con descuento sale después del curso. Pagar antes, sin el curso, no te deja el 50 ni el 25.</li>
+        </ol>
+        <div class="btn-fila">
+          <a class="btn" href="https://www.movilidadbogota.gov.co/">Agendar en movilidadbogota.gov.co</a>
+          <a class="btn btn-sec" href="descuento-50-25.html">Ver plazos y bandas 2026</a>
+        </div>
+      </section>
+
+      <section class="rama" id="rama-foto" aria-labelledby="tit-foto">
+        <h2 class="reloj-titulo" id="tit-foto">Reloj fotomulta / electrónico</h2>
+        <p>El reloj no es el de la foto. Es el de la <strong>notificación</strong>. Si aún no te notificaron, esa ventana de 11 días no empezó.</p>
+        <div class="tramos">
+          <div class="tramo">
+            <strong>50%</strong>
+            11 días hábiles desde la notificación: curso y pago.
+          </div>
+          <div class="tramo segundo">
+            <strong>25%</strong>
+            Días hábiles 12 a 26 desde la notificación: curso y pago.
+          </div>
+          <div class="tramo fuera">
+            Después del día 26 hábil esa ventana se acabó.
+          </div>
+        </div>
+        <h3>Las tres acciones</h3>
+        <ol class="pasos">
+          <li><a href="curso-pedagogico-sdm.html">Agendar el curso SDM</a>. Es gratis. Sin intermediarios.</li>
+          <li><a href="puntos-curso-sdm.html">Hacer el curso</a>. Un curso por cada orden de comparendo.</li>
+          <li>Pagar con el volante ya descontado. Curso y pago, los dos, dentro de la ventana.</li>
+        </ol>
+        <div class="btn-fila">
+          <a class="btn" href="fotomulta.html">Notificación, no la foto</a>
+          <a class="btn btn-sec" href="https://www.movilidadbogota.gov.co/">Agendar en movilidadbogota.gov.co</a>
+        </div>
+      </section>
+
+      <p class="nota">Línea SDM: (601) 364 9400, opción 2. También «Mi Movilidad a un clic». Si no hay cupo SDM o no estás en Bogotá, mira <a href="curso-cia-cuando-si.html">cuándo sí el CIA</a>.</p>
+
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Guía independiente. No somos la Secretaría de Movilidad ni el SIMIT.</p>
+      <p>Última actualización: 29 agosto 2026.</p>
+      <p><a href="aviso.html">Aviso</a> · <a href="acerca.html">Acerca</a></p>
+    </div>
+  </footer>
+  <script src="js/rama.js" defer></script>
+</body>
+</html>
